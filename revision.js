@@ -122,6 +122,8 @@ const authState = {
     users: {},
     currentUser: null,
     mode: 'signin',
+    // When a protected link is clicked while not signed in, store the target here
+    pendingNavigation: null,
 };
 
 function safeLocalStorageGet(key) {
@@ -314,7 +316,13 @@ function handleAuthSubmit(event) {
         authState.currentUser = username;
         saveAuthData();
         updateUserUI();
+        // After sign-in, redirect if we were trying to visit a protected page
+        const target = authState.pendingNavigation;
+        authState.pendingNavigation = null;
         closeAuthModal();
+        if (target) {
+            window.location.href = target;
+        }
         return;
     }
     if (authState.users[username]) {
@@ -325,7 +333,33 @@ function handleAuthSubmit(event) {
     authState.currentUser = username;
     saveAuthData();
     updateUserUI();
+    // After sign-up, redirect if we were trying to visit a protected page
+    const target2 = authState.pendingNavigation;
+    authState.pendingNavigation = null;
     closeAuthModal();
+    if (target2) {
+        window.location.href = target2;
+    }
+}
+
+function protectGoodsLinks() {
+    // Pages that contain paid/goods content — require account to access
+    const protectedSelectors = [
+        'a[href$="k14.html"]',
+        'a[href$="k16.html"]',
+        'a[href$="k24.html"]'
+    ];
+    const anchors = document.querySelectorAll(protectedSelectors.join(','));
+    anchors.forEach(a => {
+        a.addEventListener('click', (e) => {
+            if (!authState.currentUser) {
+                e.preventDefault();
+                // prompt the user to create an account
+                authState.pendingNavigation = a.href;
+                showAuthModal('signup');
+            }
+        });
+    });
 }
 
 function updateFlashcard() {
@@ -445,3 +479,21 @@ authOverlay.addEventListener('click', event => {
 });
 logoutBtn.addEventListener('click', signOut);
 attachToggleButtonListener();
+protectGoodsLinks();
+// If the index page is opened with #signup or #signup=<target>, automatically show the sign-up modal
+if (window.location.hash && window.location.hash.startsWith('#signup')) {
+    const hash = window.location.hash.substring(1); // remove '#'
+    const parts = hash.split('=');
+    const target = parts[1] ? parts[1] : null;
+    if (target) {
+        try {
+            // convert to absolute URL if it's a relative path
+            const abs = new URL(target, window.location.origin + window.location.pathname).href;
+            authState.pendingNavigation = abs;
+        } catch (e) {
+            authState.pendingNavigation = target;
+        }
+    }
+    showAuthModal('signup');
+    try { history.replaceState(null, '', window.location.pathname); } catch (e) { /* ignore */ }
+}

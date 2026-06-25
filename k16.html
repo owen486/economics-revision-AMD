@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="revision.css" />
 </head>
 <body>
+    <script>
+        try {
+            if (!localStorage.getItem('econRevisionHubCurrentUser')) {
+                const target = encodeURIComponent(window.location.pathname.replace(/^\//, ''));
+                window.location.href = `index.html#signup=${target}`;
+            }
+        } catch (e) {
+            const target = encodeURIComponent(window.location.pathname.replace(/^\//, ''));
+            window.location.href = `index.html#signup=${target}`;
+        }
+    </script>
     <header class="site-header">
         <div class="brand">
             <h1>K16 — Economics and Finance</h1>
