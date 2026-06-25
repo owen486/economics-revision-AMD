@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Financial Calculator</h1>
+  <p>Run quick accounting and economics calculations for business planning.</p>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3>Profit Margin</h3>
+    <form method="post">
+      <input type="hidden" name="calc_type" value="profit_margin" />
+      <label>Revenue</label>
+      <input type="number" name="revenue" step="0.01" required />
+      <label>Cost</label>
+      <input type="number" name="cost" step="0.01" required />
+      <input type="submit" value="Calculate" />
+    </form>
+  </div>
+  <div class="card">
+    <h3>Break-even Units</h3>
+    <form method="post">
+      <input type="hidden" name="calc_type" value="break_even" />
+      <label>Fixed Costs</label>
+      <input type="number" name="fixed_costs" step="0.01" required />
+      <label>Price per Unit</label>
+      <input type="number" name="price" step="0.01" required />
+      <label>Variable Cost per Unit</label>
+      <input type="number" name="variable_cost" step="0.01" required />
+      <input type="submit" value="Calculate" />
+    </form>
+  </div>
+  <div class="card">
+    <h3>Current Ratio</h3>
+    <form method="post">
+      <input type="hidden" name="calc_type" value="current_ratio" />
+      <label>Current Assets</label>
+      <input type="number" name="current_assets" step="0.01" required />
+      <label>Current Liabilities</label>
+      <input type="number" name="current_liabilities" step="0.01" required />
+      <input type="submit" value="Calculate" />
+    </form>
+  </div>
+</div>
+
+{% if result %}
+<div class="card">
+  <h2>{{ result.title }}</h2>
+  <p><strong>{{ result.value }}{{ result.unit }}</strong></p>
+</div>
+{% endif %}
+{% endblock %}

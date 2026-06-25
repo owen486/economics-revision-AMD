@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>General Ledger</h1>
+  <p>Record journal entries and compare total debits vs. credits to keep accounting balanced.</p>
+</div>
+
+<div class="card">
+  <h2>Add Ledger Entry</h2>
+  <form method="post">
+    <label>Date</label>
+    <input type="date" name="date" required />
+    <label>Description</label>
+    <input type="text" name="description" required />
+    <label>Category</label>
+    <input type="text" name="category" required />
+    <label>Type</label>
+    <select name="type" required>
+      <option value="Debit">Debit</option>
+      <option value="Credit">Credit</option>
+    </select>
+    <label>Amount</label>
+    <input type="number" name="amount" step="0.01" required />
+    <label>Notes</label>
+    <textarea name="notes" rows="3"></textarea>
+    <input type="submit" value="Add Entry" />
+  </form>
+</div>
+
+<div class="card">
+  <h2>Entries</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Notes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.date }}</td>
+        <td>{{ entry.description }}</td>
+        <td>{{ entry.category }}</td>
+        <td>{{ entry.type }}</td>
+        <td>{{ entry.amount }}</td>
+        <td>{{ entry.notes }}</td>
+        <td><a href="{{ url_for('delete_entry', entry_id=entry.id) }}">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Totals</h2>
+  <p><strong>Total Debits:</strong> {{ total_debits }}</p>
+  <p><strong>Total Credits:</strong> {{ total_credits }}</p>
+</div>
+{% endblock %}

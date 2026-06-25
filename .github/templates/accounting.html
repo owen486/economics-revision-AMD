@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Accounting Principles</h1>
+  <p>Accounting is the language of business. These principles help you track performance and make decisions.</p>
+</div>
+
+<div class="grid">
+  {% for topic in topics %}
+  <div class="card">
+    <h3>{{ topic.title }}</h3>
+    <p>{{ topic.content }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="card">
+  <h2>Practical Use Cases</h2>
+  <ul>
+    <li>Track revenues and expenses for accurate profit measurement.</li>
+    <li>Use the ledger to record every debit and credit.</li>
+    <li>Build financial statements from journal entries.</li>
+  </ul>
+</div>
+{% endblock %}

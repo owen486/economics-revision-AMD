@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Learning Resources</h1>
+  <p>Helpful sites and references for accounting, economics, and Flask development.</p>
+</div>
+
+<div class="card">
+  <ul>
+    {% for item in resources %}
+    <li><a href="{{ item.url }}" target="_blank">{{ item.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

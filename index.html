@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Econmics Revision AMD — First to fourth year economics revision, year-based study paths, flashcards, notes and past papers." />
+    <title>Econmics Revision AMD</title>
+    <link rel="stylesheet" href="revision.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <h1>Econmics Revision AMD</h1>
+            <p>Follow K16 > Year > Semester > Units to reach the right syllabus content.</p>
+        </div>
+        <nav>
+            <a href="year1.html">Year 1</a>
+            <a href="year2.html">Year 2</a>
+            <a href="year3.html">Year 3</a>
+            <a href="year4.html">Year 4</a>
+            <a href="year-progression.html">Progression</a>
+            <a href="about.html">About</a>
+            <a href="#flashcards">Flashcards</a>
+            <a href="#planner">Planner</a>
+            <a href="#notes">Notes</a>
+            <a href="#past-papers">Past Papers</a>
+            <a href="#research">Research</a>
+        </nav>
+        <div class="user-controls">
+            <span id="userStatus">Guest</span>
+            <button id="authButton" class="primary-btn login-btn">Sign In</button>
+            <button id="logoutBtn" class="secondary-btn hidden">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero-banner">
+            <div class="hero-copy">
+                <h2>Master your K16 — Economics and Finance; K14 — Economics Pure; K24 — Economics and Statistics</h2>
+                <p>Review key concepts, test yourself with flashcards, and keep your study sessions focused.</p>
+                <button id="startReviewBtn">Start a Review Session</button>
+            </div>
+        </section>
+
+        <section class="section-panel owner-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Meet the owner</h2>
+                    <p>Ray oversees the site and curates the economics revision materials.</p>
+                </div>
+            </div>
+            <div class="owner-card">
+                <img src="assets/owner.jpg" alt="Ray, site owner" />
+                <div>
+                    <h3>Ray</h3>
+                    <p>Ray builds the content for K16, K14, and K24 revision, focusing on exam practice, clear summaries, and student-friendly explanations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-panel year-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Class study paths</h2>
+                    <p>Choose the right class path and follow a clear revision plan for each stage.</p>
+                </div>
+            </div>
+            <div class="subject-grid">
+                <article class="subject-card">
+                    <a href="year1.html">
+                        <h3>Class 1</h3>
+                        <p>Foundations, study skills, and basic economics concepts.</p>
+                    </a>
+                </article>
+                <article class="subject-card">
+                    <a href="year2.html">
+                        <h3>Class 2</h3>
+                        <p>Class 2.1 / 2.2 units, intermediate theory, applied problems, and stronger revision routines.</p>
+                    </a>
+                </article>
+                <article class="subject-card">
+                    <a href="year3.html">
+                        <h3>Class 3</h3>
+                        <p>Case studies, exam practice, and deeper analytical skills.</p>
+                    </a>
+                </article>
+                <article class="subject-card">
+                    <a href="year4.html">
+                        <h3>Class 4</h3>
+                        <p>Final-year project support, advanced topics, and exam readiness.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-panel progression-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Your year progression</h2>
+                    <p>See how each year builds on the previous one with semester-based unit planning.</p>
+                </div>
+            </div>
+            <div class="subject-grid">
+                <article class="subject-card">
+                    <h3>Year 1</h3>
+                    <p>Foundations, clear learning goals, and first-year semester units.</p>
+                </article>
+                <article class="subject-card">
+                    <h3>Year 2</h3>
+                    <p>Semester 1 and Semester 2 units for intermediate economics and finance.</p>
+                </article>
+                <article class="subject-card">
+                    <h3>Year 3</h3>
+                    <p>Application, exam-style practice, and research preparation.</p>
+                </article>
+                <article class="subject-card">
+                    <h3>Year 4</h3>
+                    <p>Final-year focus, projects, and advanced exam readiness.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="subjects" class="section-panel subjects-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Curriculum pathways</h2>
+                    <p>Browse the main course pathways and open the pages most relevant to your year.</p>
+                </div>
+                <button id="showAllSubjectsBtn">Explore units</button>
+            </div>
+            <div class="subject-grid" id="subjectGrid">
+                <article class="subject-card curriculum-card">
+                    <a href="k16.html">
+                        <h3>K16 — Economics and Finance</h3>
+                        <p>Core materials and past papers for K16 Economics and Finance.</p>
+                    </a>
+                </article>
+                <article class="subject-card curriculum-card">
+                    <a href="k14.html">
+                        <h3>K14 — Economics Pure</h3>
+                        <p>Resources and exercises tailored for K14 Economics Pure.</p>
+                    </a>
+                </article>
+                <article class="subject-card curriculum-card">
+                    <a href="k24.html">
+                        <h3>K24 — Economics and Statistics</h3>
+                        <p>Statistics-focused modules and applied economics for K24.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="research" class="section-panel research-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Research on Google</h2>
+                    <p>Search K16 topics instantly with Google.</p>
+                </div>
+            </div>
+            <div class="research-search">
+                <input id="researchInput" type="search" placeholder="Search Google for K16 topics..." aria-label="Research search" />
+                <button id="researchBtn" type="button">Search Google</button>
+            </div>
+        </section>
+
+        <section id="flashcards" class="section-panel flashcard-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Flashcards</h2>
+                    <p>Use flashcards to test yourself on the most important K16 concepts.</p>
+                </div>
+                <select id="topicSelect" aria-label="Choose flashcard topic">
+                    <option value="K16">K16 - Economics and Finance</option>
+                    <option value="K14">K14 - Economics Pure</option>
+                    <option value="K24">K24 - Economics and Statistics</option>
+                    <option disabled>────────────</option>
+                    <option value="UCU 110">UCU 110 - Communication and Skills</option>
+                    <option value="UCU 111">UCU 111 - Introduction to Critical Thinking</option>
+                    <option value="UCU 106">UCU 106 - Ethics, Diversity and Culture in Kenya</option>
+                    <option value="BBA 102">BBA 102 - Principles of Management</option>
+                    <option value="BAC 101">BAC 101 - Fundamentals of Accounting</option>
+                    <option value="BMS 101">BMS 101 - Introduction to Insurance</option>
+                    <option value="EET 101">EET 101 - Macroeconomic Theory</option>
+                </select>
+            </div>
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-front" id="flashcardFront">What is effective communication?</div>
+                <div class="flashcard-back" id="flashcardBack">Click "Show Answer" to reveal.</div>
+            </div>
+            <div class="flashcard-actions">
+                <button id="showAnswerBtn">Show Answer</button>
+                <button id="nextCardBtn">Next Card</button>
+            </div>
+        </section>
+
+        <section id="planner" class="section-panel planner-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Study Planner</h2>
+                    <p>Plan your revision sessions and keep track of your study time.</p>
+                </div>
+                <button id="addPlanBtn">Add session</button>
+            </div>
+            <ul class="session-list" id="sessionList">
+                <li>No sessions yet. Add one to get started.</li>
+            </ul>
+        </section>
+
+        <section id="notes" class="section-panel notes-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Revision Notes</h2>
+                    <p>Save quick notes for each unit and access them instantly.</p>
+                </div>
+                <button id="addNoteBtn">New note</button>
+            </div>
+            <div class="notes-grid" id="notesGrid">
+                <article class="note-card empty-note">
+                    <p>Use the button above to add your first revision note.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="past-papers" class="section-panel papers-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Past Papers</h2>
+                    <p>Save past paper titles, exam years and links for easy practice.</p>
+                </div>
+                <button id="addPaperBtn">Add paper</button>
+            </div>
+            <div class="papers-grid" id="papersGrid">
+                <article class="paper-card empty-note">
+                    <p>Add your first past paper to build a revision archive.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Econmics Revision AMD • K16 Economics and Finance • K14 Economics Pure • K24 Economics and Statistics</p>
+    </footer>
+
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close">✕</button>
+            <h3 id="modalTitle">Add Session</h3>
+            <form id="modalForm">
+                <label>
+                    Unit
+                    <input type="text" id="modalSubject" placeholder="UCU 110, BBA 102, etc." required />
+                </label>
+                <label>
+                    Description
+                    <textarea id="modalDescription" rows="3" placeholder="What will you review?" required></textarea>
+                </label>
+                <label class="modal-duration-field">
+                    Duration (minutes)
+                    <input type="number" id="modalDuration" min="5" max="180" value="30" required />
+                </label>
+                <label class="modal-link-field hidden">
+                    Link / file path
+                    <input type="url" id="modalLink" placeholder="https://example.com/paper.pdf" />
+                </label>
+                <button type="submit" class="primary-btn">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="authOverlay" class="modal-overlay hidden">
+        <div class="modal auth-modal">
+            <button class="modal-close" id="authCloseBtn" aria-label="Close">✕</button>
+            <h3 id="authTitle">Sign In</h3>
+            <form id="authForm">
+                <label class="auth-field">
+                    Username
+                    <input type="text" id="authUsername" placeholder="Enter username" required />
+                </label>
+                <label class="auth-field">
+                    Password
+                    <input type="password" id="authPassword" placeholder="Enter password" required />
+                </label>
+                <button type="submit" class="primary-btn" id="authSubmitBtn">Sign In</button>
+            </form>
+            <p id="authToggleText" class="auth-toggle-text">
+                <span id="authToggleMessage">Don’t have an account?</span>
+                <button id="authToggleBtn" type="button">Sign Up</button>
+            </p>
+        </div>
+    </div>
+
+    <script src="revision.js"></script>
+</body>
+</html>

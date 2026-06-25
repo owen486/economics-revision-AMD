@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Contact</h1>
+  <p>Send a message to request custom features or ask questions about the site.</p>
+</div>
+
+{% if message_sent %}
+<div class="card">
+  <h2>Thank you!</h2>
+  <p>Your message was submitted successfully.</p>
+</div>
+{% else %}
+<div class="card">
+  <form method="post">
+    <label>Name</label>
+    <input type="text" name="name" required />
+    <label>Email</label>
+    <input type="email" name="email" required />
+    <label>Message</label>
+    <textarea name="message" rows="5" required></textarea>
+    <input type="submit" value="Send Message" />
+  </form>
+</div>
+{% endif %}
+{% endblock %}

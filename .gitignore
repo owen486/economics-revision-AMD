@@ -1,0 +1,16 @@
+extensions/
+.vscode/
+cli/
+node_modules/
+*.log
+.DS_Store
+*.swp
+Untitled-1.html
+admin.html
+argv.json
+gts 450.html
+main.js
+owens work.html
+styles.css
+owen/
+clean-publish/

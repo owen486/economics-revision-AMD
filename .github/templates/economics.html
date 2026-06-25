@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+  <h1>Economics Principles</h1>
+  <p>Economics helps explain how markets operate and how agents make choices with limited resources.</p>
+</div>
+
+<div class="grid">
+  {% for topic in topics %}
+  <div class="card">
+    <h3>{{ topic.title }}</h3>
+    <p>{{ topic.content }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="card">
+  <h2>Example Applications</h2>
+  <ul>
+    <li>Review how supply and demand set equilibrium prices.</li>
+    <li>Study opportunity cost when evaluating business decisions.</li>
+    <li>Use elasticity to project the impact of pricing changes.</li>
+  </ul>
+</div>
+{% endblock %}
